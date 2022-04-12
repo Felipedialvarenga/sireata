@@ -128,8 +128,8 @@ public class OrgaoBO {
 			throw new Exception(e.getMessage());
 		}
 	}
-	
-	public int salvar(Orgao orgao) throws Exception{
+
+	private void getValidacaoSalvar(Orgao orgao) throws Exception {
 		if(orgao.getNome().isEmpty()){
 			throw new Exception("Informe o nome do câmpus.");
 		}
@@ -142,7 +142,10 @@ public class OrgaoBO {
 		if((orgao.getSecretario() == null) || (orgao.getSecretario().getIdUsuario() == 0)){
 			throw new Exception("Selecione o secretário");
 		}
-		
+	}
+	
+	public int salvar(Orgao orgao) throws Exception{
+		getValidacaoSalvar(orgao);
 		boolean encontrou = false;
 		
 		for(OrgaoMembro u : orgao.getMembros()){
