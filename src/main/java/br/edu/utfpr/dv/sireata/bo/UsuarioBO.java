@@ -65,10 +65,10 @@ public class UsuarioBO {
 	
 	private boolean loginEAluno(String login){
 		if(login.toLowerCase().startsWith("a")){
-			login = login.substring(1);
+			String loginFormat = login.substring(1);
 			
 			try{
-				Integer.parseInt(login);
+				Integer.parseInt(loginFormat);
 				
 				return true;
 			}catch(Exception e){
