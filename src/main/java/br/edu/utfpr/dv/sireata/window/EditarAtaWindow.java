@@ -1055,7 +1055,7 @@ public class EditarAtaWindow extends EditarWindow {
 		try {
 			AtaBO bo = new AtaBO();
 			
-			bo.bloquearComentarios(this.ata);
+			bo.bloquearComentarios(this.ata.getIdAta());
 			
 			this.ata.setAceitarComentarios(false);
 			

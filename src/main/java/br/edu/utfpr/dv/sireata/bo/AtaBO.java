@@ -316,10 +316,6 @@ public class AtaBO {
 		}
 	}
 	
-	public void bloquearComentarios(Ata ata) throws Exception{
-		this.bloquearComentarios(ata.getIdAta());
-	}
-	
 	public void bloquearComentarios(int idAta) throws Exception{
 		try{
 			AtaDAO dao = new AtaDAO();
